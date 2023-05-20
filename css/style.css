@@ -1,0 +1,342 @@
+/* Reset Css  */
+
+* {
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+
+
+/* Header  */
+
+header {
+    z-index: 10;
+  
+}
+
+header .navbar-nav li {
+    position: relative;
+}
+
+header .navbar-nav li::after {
+    content: "";
+    background-color: green;
+    height: 3px;
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    transition: all 0.5s;
+}
+
+header .navbar-nav li:hover::after {
+        opacity: 1;
+        width: 100%;
+}
+
+
+header .navbar-nav li:hover a {
+    color: green !important;
+}
+
+header .navbar-nav li.active:after {
+    width: 100%;
+    opacity: 1;
+}
+
+header .navbar-nav li.active a {
+    color: green !important;
+}
+
+/* Carousel  */
+
+.cyber_carousel .carousel-inner .carousel-item {
+    height: 100vh;
+}
+
+
+.cyber_carousel .carousel-inner .carousel-item .carousel_content {
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+   
+}
+
+.carousel-item .carousel_content img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.carousel-indicators [data-bs-target]  {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+   
+}
+
+.carousel-indicators .active {
+  
+    background-color: green !important;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    display: none;
+}
+
+.carousel_content h2 {
+    font-size: 70px;
+    padding: 30px 0 0 0;
+    font-weight: 400;
+}
+
+
+.carousel_content p {
+    font-size: 2rem;
+    margin-top:20px;
+}
+
+/* .cyber_carousel .carousel-item img {
+    height: 100%;
+    object-fit: cover;
+} */
+
+/* project */
+
+.cyber_project .project_content ul button.active {
+    background-color: green;
+    color: white !important;
+    border-color: green !important;
+   
+    
+}
+
+.cyber_project .project_content .project_item {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;    
+}
+
+.cyber_project .project_content .project_item .project_text {
+    transition: all 0.5s;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border-top:none;
+    border:1px solid transparent;
+}
+
+.cyber_project .project_content .project_item:hover .project_text {
+    border-color: green;
+    
+
+}
+
+.cyber_project .project_content .project_item:hover .project_text h4 {
+    color: green;
+}
+
+.cyber_project .project_title {
+
+    text-align: center;
+
+}
+
+.cyber_project .project_title h2 {
+    padding: 30px 0 20px ;
+}
+
+ /* Avai  */
+
+ .cyber_avai {
+    background-image: url(../img/3.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+    position: relative;
+ }
+
+
+ .cyber_avai::before {
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    /* right:0;
+    bottom:0; */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.608);
+    
+ }
+
+ .cyber_avai .avai_content {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 30px;
+   
+ }
+
+ .cyber_avai .avai_content .avai_item {
+    background: rgba( 255, 255, 255, 0.15 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 2.5px );
+    -webkit-backdrop-filter: blur( 2.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding: 30px;
+    transition: all 0.5s;
+ }
+
+ .cyber_avai .avai_content .avai_item:hover{
+    background: rgba(0, 0, 0, 0.707);
+    border:1px solid white;
+    
+ }
+
+ .cyber_avai .avai_content .avai_item i {
+    font-size: 50px;
+    color: green;
+ }
+
+ .cyber_avai .avai_content .avai_item h3 {
+    margin: 20px 0;
+    font-weight: bold;
+    padding: 10px 0 15px 0;
+   
+ }
+
+ .cyber_avai .avai_content .avai_item p {
+    font-size: 20px;
+ }
+
+ .cyber_avai .avai_title  h2 {
+    font-size: 40px;
+    font-weight: bold;
+    padding: 20px 0;
+}
+
+.cyber_avai .avai_title p {
+    font-size: 20px;
+    padding-bottom: 30px;
+}
+
+
+/* sử dụng media nếu dùng max-width => lấy vùng nhìn từ 0 cho tới giá trị nhận vào max-width  */
+
+/* Các max-width lớn hơn nên nằm trên max-width nhỏ hơn để tránh bị ghi đè  */
+
+
+@media screen and (max-width: 768px) {
+
+    .cyber_avai .avai_content {
+        flex-wrap: wrap;
+    }
+    .cyber_avai .avai_content .avai_item {
+        width: 48%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .cyber_avai .avai_content {
+        display:block;
+
+    }
+    .cyber_avai .avai_content .avai_item {
+        margin-bottom: 15px;;
+    } */
+
+    .cyber_avai .avai_content {
+        flex-wrap: wrap;
+    }
+
+    .cyber_avai .avai_content .avai_item {
+        width: 100%;
+    }
+    
+}
+
+/* min-width cách sử dụng và để các giá trị nhỏ hơn nằm trên  */
+
+
+/* @media screen and (min-width: 576px) {
+ .avai_content {
+    display: flex;
+ }
+}
+
+@media screen and (min-width: 992px) {
+    .avai_content {
+        flex-wrap: wrap;
+    }
+
+    .cyber_avai .avai_content  .avai_item {
+        width: 48%;
+    }
+} */
+
+
+
+/* Achievement  */
+
+.cyber_achive {
+    background-image: url(../img/memphis_3.png);
+    padding: 60px 0;
+}
+
+
+.cyber_content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cyber_content .achi_left {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 30px;
+    margin-right: 20px;
+    border-radius: 10px;
+    width: 35%;
+
+}
+
+.cyber_content .achi_left h3 {
+    margin-bottom:20px;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.cyber_content .achi_right {
+    width: 65%;
+    padding: 30px;
+}
+
+.cyber_content .achi_right .achi_right_img {
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+.cyber_content .achi_right .achi_right_img img {
+    width: 120px;
+}
+
+
+/* Footer  */
+
+footer {
+    background-color: black;
+    color: gray;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.footer_content {
+  
+}
